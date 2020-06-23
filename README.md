@@ -1,34 +1,10 @@
-The Metropolitan Museum of Art Open Access CSV
+The Metropolitan Museum of Art X UVA School of Data Science 
+The Art of Data Storytelling 
+Capstone Team Members : Sudeepti Surapaneni, Logan Lee, Sana Sayed
 ===================
 
-The [Metropolitan Museum of Art](http://www.metmuseum.org) presents over 5,000 years of art from around the world for everyone to experience and enjoy. The Museum lives in three iconic sites in New York City—The Met Fifth Avenue, The Met Breuer, and The Met Cloisters. Millions of people also take part in The Met experience online.
+# ABSTRACT
+Machine learning and computer vision have been applied for image recognition of art objects such as paintings, sculpture images etc. In particular, deep learning methods for image classification in art have been used to improve user en- gagement by providing access to accurately labelled and classified art objects. As an increasing number of notable museums turn towards creating open access collections, alternatives to the use of laborious human annotating methods are needed. This paper focuses on the Open Access initiative of The Metropolitan Mu- seum of Art (The Met) which was launched in 2017 in an effort to expand The Met’s reach and presence. The museum now provides a select dataset of information on more than 470,000 artworks in its collection for unrestricted commercial and noncommercial use. However, with a widely accessible collection, the Met now faces the problem of how to enhance the user experience via access to accurately labelled art. This paper focuses on machine learning methods with applicability to automated classification of images obtained from The Met’s online collection. We aimed to: 1) Compare three different convolutional neural networks - ResNet 50, ResNet 101, and Inception-ResNet-V2- using human annotated data, 2) Add transparency and interpretability to our models by using Gradient Weighted Class Activation Maps (GRAD-cams) and to explore bias in gender labels and 3) implement a multi-label classification model using ResNet 50. Future work would include the use of unsupervised clustering methods / auto-encoders to explore additional themes in the data. Other extensions of this work would include exploring methods to implement fine grained visual categorization, to mitigate bias, and to address the limitations associated with culture and stylistic interpretations. Deep learning techniques for art image classification may also help detect consistent features of bias in human annotated art.
 
-Since it was founded in 1870, The Met has always aspired to be more than a treasury of rare and beautiful objects. Every day, art comes alive in the Museum's galleries and through its exhibitions and events, revealing both new ideas and unexpected connections across time and across cultures.
-
-The Metropolitan Museum of Art provides select datasets of information on more than 470,000 artworks in its Collection for unrestricted commercial and noncommercial use. To the extent possible under law, The Metropolitan Museum of Art has waived all copyright and related or neighboring rights to this dataset using [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/). This work is published from: The United States Of America. You can also find the text of the CC Zero deed in the file [LICENSE](https://github.com/metmuseum/openaccess/blob/master/LICENSE) in this repository. These select datasets are now available for use in any media without permission or fee; they also include identifying data for artworks under copyright. The datasets support the search, use, and interaction with the Museum’s collection. 
-
-At this time, the datasets are available in CSV format, encoded in UTF-8. While UTF-8 is the standard for multilingual character encodings, it is not correctly interpreted by Excel on a Mac. Users of Excel on a Mac can convert the UTF-8 to UTF-16 so the file can be imported correctly.
-
-## Additional usage guidelines
-### Images not included
-Images are not included and are not part of the dataset. Companion artworks listed in the dataset covered by the policy are identified in the [Collection section](http://www.metmuseum.org/art/collection) of the Museum’s website  with the Creative Commons Zero (CC0) icon. 
-
-For more details on how to use images of artworks in The Metropolitan Museum of Art’s collection, please visit our [Open Access](http://www.metmuseum.org/about-the-met/policies-and-documents/image-resources) page.
-
-### Documentation in progress
-This data is provided “as is” and you use this data at your own risk. The Metropolitan Museum of Art makes no representations or warranties of any kind. Documentation of the Museum’s collection is an ongoing process and parts of the datasets are incomplete. 
-
-We plan to update the datasets with new and revised information on a regular basis. You are advised to regularly update your copy of the datasets to ensure you are using the best available information.
-
-### Pull requests
-Because these datasets are generated from our internal database, we do *not* accept pull requests. If you have identified errors or have extra information to share, please email us at [openaccess@metmuseum.org](mailto:openaccess@metmuseum.org) and we will forward to the appropriate department for review.
-
-### Attribution
-Please consider attributing or citing The Metropolitan Museum of Art's CC0 select datasets, especially with respect to research or publication. Attribution supports efforts to release other datasets in the future. It also reduces the amount of "orphaned data," helping to retain source links.
-
-### Do not misrepresent the dataset
-Do not mislead others or misrepresent the datasets or their source. You must not use The Metropolitan Museum of Art’s trademarks or otherwise claim or imply that the Museum or any other third party endorses you or your use of the dataset.
-
-Whenever you transform, translate or otherwise modify the dataset, you must make it clear that the resulting information has been modified. If you enrich or otherwise modify the dataset, consider publishing the derived dataset without reuse restrictions.
-
-The writers of these guidelines thank the [The Museum of Modern Art](http://www.moma.org/), [Tate](http://www.tate.org.uk/), [Cooper-Hewitt](http://www.cooperhewitt.org/), and [Europeana](http://www.europeana.eu/).
+# DATA 
+As outlined in the data pipeline below, we extracted 469,301 high-resolution images in addition to all the related object metadata from The Met’s API. Each object’s metadata was stored as a JSON string consisting of detailed information such as object ID, origin, tag, and other pieces of artist information, in addition to its corresponding image URL link and 40 other features. We stored the metadata within a SQLite database which was easily integrated with Python. The web- scraped images were stored on Rivanna which is the high- performance computing cluster at UVA. 
