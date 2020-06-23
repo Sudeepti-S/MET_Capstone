@@ -7,3 +7,5 @@ Machine learning and computer vision have been applied for image recognition of 
 
 # DATA 
 As outlined in the data pipeline below, we extracted 469,301 high-resolution images in addition to all the related object metadata from The Met’s API. Each object’s metadata was stored as a JSON string consisting of detailed information such as object ID, origin, tag, and other pieces of artist information, in addition to its corresponding image URL link and 40 other features. We stored the metadata within a SQLite database which was easily integrated with Python. The web- scraped images were stored on Rivanna which is the high- performance computing cluster at UVA. 
+
+![Test Image 1](pipe.png)
