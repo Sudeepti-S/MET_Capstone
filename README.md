@@ -1,7 +1,5 @@
 # The Metropolitan Museum of Art X UVA School of Data Science
 # The Art of Data Storytelling 
-===================
-
 Capstone Team Members : Sudeepti Surapaneni, Logan Lee, Sana Sayed
 
 # ABSTRACT
